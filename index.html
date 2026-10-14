@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#0b0d10">
+  <meta name="description" content="A premium, responsive photography gallery with category filters and a full-screen lightbox.">
+  <title>FRAME — Visual Stories</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+  <script src="script.js" defer></script>
+</head>
+<body>
+  <div class="ambient ambient-one"></div>
+  <div class="ambient ambient-two"></div>
+  <header class="site-header">
+    <a class="brand" href="#" aria-label="Frame home"><span class="brand-mark">F</span><span>FRAME<span class="brand-dot">.</span></span></a>
+    <nav class="top-nav" aria-label="Main navigation">
+      <a class="nav-link active" href="#gallery">Gallery</a>
+      <a class="nav-link" href="#about">About</a>
+    </nav>
+    <a class="header-cta" href="#gallery">Explore collection <span aria-hidden="true">↗</span></a>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="hero-copy">
+        <div class="eyebrow"><span class="eyebrow-line"></span> A CURATED VISUAL JOURNAL</div>
+        <h1>See the world<br>in <em>different light.</em></h1>
+        <p class="hero-description">A collection of moments, places, and details worth pausing for. Explore the gallery and open any frame to see the story up close.</p>
+        <a class="hero-link" href="#gallery">Discover the gallery <span>↓</span></a>
+      </div>
+      <div class="hero-art" aria-label="Featured mountain landscape">
+        <img src="https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?auto=format&fit=crop&w=1200&q=85" alt="Mountain peaks rising above the clouds">
+        <div class="hero-art-shade"></div>
+        <div class="hero-art-label"><span>01 / FEATURED</span><strong>Above the ordinary</strong></div>
+        <div class="hero-vertical">COLLECT MOMENTS · NOT THINGS</div>
+      </div>
+      <div class="hero-bottom"><span>INDEPENDENT IMAGE COLLECTION</span><span>SCROLL TO EXPLORE <span class="scroll-dot">↓</span></span></div>
+    </section>
+
+    <section class="gallery-section" id="gallery">
+      <div class="section-heading">
+        <div><div class="eyebrow"><span class="eyebrow-line"></span> THE COLLECTION</div><h2>Frames that <em>stay with you.</em></h2></div>
+        <p class="section-note">A little beauty in every direction.<br>Choose a category and find your perspective.</p>
+      </div>
+      <div class="gallery-toolbar">
+        <div class="filter-list" role="group" aria-label="Filter images by category">
+          <button class="filter-btn active" type="button" data-filter="all" aria-pressed="true">All frames <span>08</span></button>
+          <button class="filter-btn" type="button" data-filter="nature" aria-pressed="false">Nature</button>
+          <button class="filter-btn" type="button" data-filter="architecture" aria-pressed="false">Architecture</button>
+          <button class="filter-btn" type="button" data-filter="travel" aria-pressed="false">Travel</button>
+          <button class="filter-btn" type="button" data-filter="wildlife" aria-pressed="false">Wildlife</button>
+        </div>
+        <div class="gallery-count"><span id="visible-count">08</span> PHOTOGRAPHS</div>
+      </div>
+      <div class="gallery-grid" id="gallery-grid" aria-live="polite"></div>
+      <div class="gallery-end"><span class="end-line"></span><span>END OF COLLECTION</span><span class="end-line"></span></div>
+    </section>
+
+    <section class="about-section" id="about">
+      <div class="about-number">F<span>.</span></div>
+      <div class="about-copy"><div class="eyebrow"><span class="eyebrow-line"></span> THE IDEA BEHIND FRAME</div><h2>Every picture<br>holds a <em>point of view.</em></h2></div>
+      <p>FRAME is a simple space for visual discovery — built to let the images lead. Browse by category, linger on the details, and move through each photograph at your own pace.</p>
+    </section>
+  </main>
+
+  <footer class="site-footer"><a class="brand footer-brand" href="#"><span class="brand-mark">F</span><span>FRAME<span class="brand-dot">.</span></span></a><span>MADE FOR THE ART OF LOOKING</span><span>© <span id="year"></span> FRAME COLLECTION</span></footer>
+
+  <div class="lightbox" id="lightbox" aria-hidden="true" role="dialog" aria-modal="true" aria-label="Image viewer">
+    <button class="lightbox-close" id="lightbox-close" type="button" aria-label="Close image viewer">×</button>
+    <button class="lightbox-arrow lightbox-prev" id="lightbox-prev" type="button" aria-label="Previous image">←</button>
+    <div class="lightbox-content">
+      <div class="lightbox-image-wrap"><img id="lightbox-image" src="" alt=""></div>
+      <div class="lightbox-caption"><div><span id="lightbox-category" class="lightbox-category"></span><h3 id="lightbox-title"></h3></div><span id="lightbox-counter" class="lightbox-counter"></span></div>
+    </div>
+    <button class="lightbox-arrow lightbox-next" id="lightbox-next" type="button" aria-label="Next image">→</button>
+    <div class="lightbox-hint">USE ← → TO NAVIGATE <span>·</span> ESC TO CLOSE</div>
+  </div>
+</body>
+</html>
